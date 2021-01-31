@@ -6,7 +6,7 @@ OBJ         =       $(SRC:.cpp=.o)
 
 CXXFLAGS    +=      -Wall
 CXXFLAGS    +=      -Wextra
-CXXFLAGS	+=      -Werror
+CXXFLAGS    +=      -Werror
 CXXFLAGS    +=      -Wno-unused-parameter
 
 CXXFLAGS    +=      -I./include
