@@ -1,0 +1,1 @@
+emcc main.c -s USE_SDL=2 -s INITIAL_MEMORY=67108864 -O3 -o test.html
