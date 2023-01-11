@@ -1,5 +1,8 @@
 #include <SDL2/SDL.h>
+
+#ifdef __EMSCRIPTEN__
 #include <emscripten.h>
+#endif
 
 #include <stdbool.h>
 #include <stdlib.h>
@@ -179,7 +182,13 @@ int main(void)
 
     gameClock = clock();
 
+#ifdef __EMSCRIPTEN__
     emscripten_set_main_loop(mainLoop, 0, 1);
+#else
+    while (running) {
+        mainLoop();
+    }
+#endif
 
     // SDL_DestroyRenderer(renderer);
     // SDL_DestroyWindow(window);
